@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+    database:
+        container_name: desafio_database
+        image: postgres:14.1-alpine
+        ports:
+        - "5432:5432"
+        environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=docker
+        - POSTGRES_DB=desafio_database
+        volumes:
+        - ./.docker/database_data/:/var/lib/postgresql/data
